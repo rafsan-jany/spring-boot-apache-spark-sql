@@ -22,7 +22,7 @@ There are ways to install and execute a Spark application using different config
 single JVM in a laptop, different JVMs, or different JVMs across a cluster. The **local configuration** means the **driver program, spark executors, and cluster manager** will run all in the **same JVM**
 [hellocodeclub](https://www.hellocodeclub.com/apache-spark-java-tutorial-simplest-guide-to-get-started/#Set_Up_Spark_Java_Program). <br/>
 
-Another defination for better understanding : <br/>
+### Another defination for better understanding : <br/>
 A Spark Application consists of a **Driver Program** and a group of **Executors** on the cluster. The Driver is a process that executes the main program of your Spark application and creates the **SparkContext** that coordinates the execution of jobs (more on this later). The executors are processes running on the worker nodes of the cluster which are responsible for executing the tasks the driver process has assigned to them. <br/>
 The cluster manager (such as Mesos or YARN) is responsible for the allocation of physical resources to Spark Applications
 [towardsdatascience](https://towardsdatascience.com/sparksession-vs-sparkcontext-vs-sqlcontext-vs-hivecontext-741d50c9486a). <br/>
