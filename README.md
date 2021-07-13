@@ -31,15 +31,15 @@ The cluster manager (such as Mesos or YARN) is responsible for the allocation of
 Every Spark Application needs an entry point that allows it to communicate with data sources and perform certain operations such as reading and writing data. <br/> 
 ### In **Spark 1.x**, three entry points were introduced:
 1. **SparkContext** <br/>
-SQLContext is the entry point to SparkSQL which is a Spark module for structured data processing. Once SQLContext is initialised, the user can then use it in order to           perform various “sql-like” operations over Datasets and Dataframes. <br/>
-In order to create a SQLContext, you first need to instantiate a SparkContext as shown below: <br/>
+The SparkContext is used by the Driver Process of the Spark Application in order to establish a communication with the cluster and the resource managers in order to coordinate and execute jobs. SparkContext also enables the access to the other two contexts, namely SQLContext and HiveContext (more on these entry points later on) [(towardsdatascience)](https://towardsdatascience.com/sparksession-vs-sparkcontext-vs-sqlcontext-vs-hivecontext-741d50c9486a). <br/>
+In order to create a SparkContext, you will first need to create a Spark Configuration (SparkConf) as shown below: <br/>
     ```
         // CREATE SPARK CONTEXT
         SparkConf conf = new SparkConf().setAppName("AppName").setMaster("local[3]");
         JavaSparkContext sparkContext = new JavaSparkContext(conf);
     ```
 2. **SQLContext** <br/>
-SQLContext is the entry point to SparkSQL which is a Spark module for structured data processing. Once SQLContext is initialised, the user can then use it in order to           perform various “sql-like” operations over Datasets and Dataframes. it’s an entry point to Spark when you wanted to program and use Spark RDD. <br/>
+SQLContext is the entry point to SparkSQL which is a Spark module for structured data processing. Once SQLContext is initialised, the user can then use it in order to           perform various “sql-like” operations over Datasets The SparkContext is used by the Driver Process of the Spark Application in order to establish a communication with the cluster and the resource managers in order to coordinate and execute jobs. SparkContext also enables the access to the other two contexts, namely SQLContext and HiveContext (more on these entry points later on)and Dataframes. it’s an entry point to Spark when you wanted to program and use Spark RDD. <br/>
 In order to create a SQLContext, you first need to instantiate a SparkContext as shown below: <br/>
     ```
         // CREATE SPARK SQL CONTEXT
